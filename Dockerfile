@@ -38,9 +38,22 @@ RUN R -e "install.packages(c('shinyRGL', 'rgl'), repos = 'http://cran.us.r-proje
 RUN R -e "devtools::install_github('uc-bd2k/CLEAN')"
 
 RUN R -e "devtools::install_github('uc-bd2k/CLEAN.Hs')"
+RUN R -e "devtools::install_github('rstudio/httpuv')"  
 
 
-RUN R -e "devtools::install_github('Saadman/SigNetA')"
+#RUN R -e "devtools::install_github('Saadman/SigNetA')"
+
+RUN R -e "devtools::install_github('uc-bd2k/SigNetA')"
+
+ADD mainData $HOME/tmp/datasets
+
+RUN chmod 777 /srv/shiny-server 
+RUN chmod 777 /tmp/datasets
+
+
+
+
+
 
 
 
