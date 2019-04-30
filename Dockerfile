@@ -50,6 +50,10 @@ ADD mainData $HOME/tmp/datasets
 RUN chmod 777 /srv/shiny-server 
 RUN chmod 777 /tmp/datasets
 
+COPY shiny-server.conf /etc/shiny-server/
+
+
+
 
 
 
